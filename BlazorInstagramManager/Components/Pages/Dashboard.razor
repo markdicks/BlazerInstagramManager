@@ -1,0 +1,31 @@
+﻿@page "/dashboard"
+
+<h2>Dashboard</h2>
+
+<div class="card">
+    <h3>Visitors</h3>
+    <p>250</p>
+</div>
+
+<div class="card">
+    <h3>Most Engaged User</h3>
+    <p>@mostEngagedUser</p>
+</div>
+
+<div class="card">
+    <h3>Followers</h3>
+    <p>150</p>
+</div>
+
+<div class="card">
+    <h3>Top Hashtags</h3>
+    <ul>
+        <li>#InstaViewer</li>
+        <li>#InstagramStats</li>
+        <li>#SocialMediaAnalytics</li>
+    </ul>
+</div>
+
+@code {
+    private string mostEngagedUser = "john_doe";
+}

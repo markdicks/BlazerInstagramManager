@@ -1,0 +1,32 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>InstaViewer</h2>
+        </div>
+        <NavMenu />
+        <button class="toggle-dark" @onclick="ToggleDarkMode">🌙/☀️</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="top-row">
+            <h1>📊 Instagram Data Viewer</h1>
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">Docs</a>
+        </div>
+
+        <section class="content">
+            @Body
+        </section>
+    </main>
+</div>
+
+@code {
+    private async Task ToggleDarkMode()
+    {
+        await JS.InvokeVoidAsync("eval", "document.body.classList.toggle('dark-mode');");
+    }
+}
